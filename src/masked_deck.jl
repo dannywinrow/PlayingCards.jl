@@ -25,7 +25,7 @@ end
 Base.length(deck::MaskedDeck) = count(deck.mask)
 function MaskedDeck()
     cards = PlayingCards.full_deck()
-    mask = BitVector(ntuple(_->true, 52))
+    mask = trues(52)
     return MaskedDeck{typeof(cards)}(cards, mask)
 end
 
